@@ -17,3 +17,119 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+#nav {
+    padding: 40px 50px 0 50px;
+}
+
+#nav-container {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(16px);
+    padding: 0 20px;
+}
+
+.nav-left:hover {
+    cursor: pointer;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right .btn {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    color: white;
+    height: 80px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.nav-right .btn::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    left: 0;
+    bottom: 0;
+    width: 0; 
+    height: 2px;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-right .btn:hover::after {
+    width: 100%;
+}
+
+#content-container {
+    display: flex;
+    width: 100%;
+    margin-top: 140px;
+}
+
+.content-left {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left: 100px;
+}
+
+.content-left h3 {
+    font-size: 26px;
+    font-weight: 100;
+    transform: scaleY(1.6);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.content-left h1 {
+    font-size: 130px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.content-left p {
+    font-size: 16px;
+    padding-right: 190px;
+    line-height: 1.6rem;
+}
+
+
+.content-right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: white;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    margin-top: 100px;
+    cursor: pointer;
+}
+
+.btn-container .btn {
+    border: none;
+}
+
+.btn-container .btn h2 {
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: 100;
+}
