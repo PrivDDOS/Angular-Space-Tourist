@@ -1,6 +1,4 @@
-<body>
-
-    <div id="container">
+<div id="container">
 
         <header id="nav">
             <div id="nav-container">
@@ -8,13 +6,25 @@
                 <nav class="nav-left">
                     <img src="/assets/shared/logo.svg" alt="logo">
                 </nav>
+
+                <div class="mobile-menu">
+                    <img id="mobile-icon" src="/assets/shared/icon-hamburger.svg" alt="mobile-icon">
+                </div>
     
-                <nav class="nav-right">
+                <nav class="nav-right active">
     
-                    <button class="btn">
+                    <button 
+                    routerLink=""
+                    type="button"
+                    class="btn"
+                    >
                         <h4 class="btn-text">00 Home</h4>
                     </button>
-                    <button class="btn">
+                    <button 
+                    routerLink="/destination"
+                    type="button"
+                    class="btn"
+                    >
                         <h4 class="btn-text">01 Destination</h4>
                     </button>
                     <button class="btn">
@@ -42,14 +52,16 @@
     
             <div class="content-right">
                 <div class="btn-container">
-                    <button class="btn">
+                    <button 
+                    routerLink="/destination"
+                    type="button"
+                    class="btn"
+                    >
                         <h2>Explore</h2>
                     </button>
                 </div>
             </div>
     
         </main>
-        
+    
     </div>
-
-</body>

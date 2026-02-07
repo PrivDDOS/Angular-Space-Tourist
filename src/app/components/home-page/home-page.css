@@ -5,14 +5,15 @@
     font-family:'Barlow', sans-serif;
 }
 
-body {
-    width: 100%;
+html, body {
     height: 100%;
-    color: white;
+    margin: 0;
+    padding: 0;
 }
 
 #container {
-    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
     background-image: url("/assets/home/background-home-desktop.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -34,6 +35,10 @@ body {
 
 .nav-left:hover {
     cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
 }
 
 .nav-right {
@@ -71,7 +76,8 @@ body {
 #content-container {
     display: flex;
     width: 100%;
-    margin-top: 140px;
+    justify-content: center;
+    align-items: center;
 }
 
 .content-left {
@@ -80,6 +86,7 @@ body {
     justify-content: flex-start;
     flex-direction: column;
     margin-left: 100px;
+    color: white;
 }
 
 .content-left h3 {
@@ -109,6 +116,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 550px;
 }
 
 .btn-container {
@@ -132,4 +140,83 @@ body {
     font-size: 26px;
     text-transform: uppercase;
     font-weight: 100;
+}
+
+@media only screen and (max-width: 1080px) {
+    #container {
+        background-image: url('/assets/home/background-home-tablet.jpg');
+    }
+
+    #content-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 60px;
+    }
+
+    .content-left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin: 0;
+    }
+
+    .content-left p {
+        padding: 0;
+    }
+
+    .content-right {
+        height: 340px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #container {
+        background-image: url('/assets/home/background-home-mobile.jpg');
+        background-position: center;
+    }
+
+    #content-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .mobile-menu {
+        display: block;
+        position: relative;
+        margin-left: auto;
+        padding-right: 24px;
+        cursor: pointer;
+        z-index: 1002;
+    }
+
+    .nav-right {
+        position: fixed;
+        inset: 0 0 0 auto;
+        top: -70%;
+        right: -100%;
+        width: 80%;
+        min-height: 100vh;
+        background: rgba(15, 15, 30, 0.95);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 120px;
+        padding-right: 30px;
+        transition: right 0.4s ease;
+        z-index: 1000;
+    }
+
+    .nav-right.active {
+        right: -10%;
+        display: flex;
+        align-items: flex-end;
+    }
 }
