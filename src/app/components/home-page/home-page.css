@@ -73,6 +73,10 @@ html, body {
     width: 100%;
 }
 
+.nav-right .btn-text {
+    font-size: 14px;
+}
+
 #content-container {
     display: flex;
     width: 100%;
