@@ -202,3 +202,93 @@ html, body {
     font-size: 32px;
     font-weight: 100;
 }
+
+@media only screen and (max-width: 1080px) {
+    #container {
+        background-image: url("/assets/destination/background-destination-tablet.jpg");
+    }
+
+    #des-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .des-title {
+        padding: 0;
+    }
+
+    .des-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        width: 80%;
+    }
+
+    .select-group {
+        display: flex;
+        justify-content: center;
+        margin-left: 40px;
+    }
+
+    .des-intro .des-info {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 50px;
+        padding-bottom: 20px;
+    }
+
+    .des-intro .line {
+        width: 100%;
+    }
+
+    .des-intro .des-remain {
+        width: 90%;
+        margin: 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .mobile-menu {
+        display: block;
+        position: relative;
+        margin-left: auto;
+        padding-right: 24px;
+        cursor: pointer;
+        z-index: 1002;
+    }
+
+    .nav-right {
+        position: fixed;
+        inset: 0 0 0 auto;
+        top: -70%;
+        right: -100%;
+        width: 80%;
+        min-height: 100vh;
+        background: rgba(15, 15, 30, 0.95);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 120px;
+        padding-right: 30px;
+        transition: right 0.4s ease;
+        z-index: 1000;
+    }
+
+    .nav-right.active {
+        right: -10%;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .des-left {
+        width: 100%;
+    }
+}
