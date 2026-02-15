@@ -37,83 +37,109 @@
                 </nav>
             </div>
         </header>
+
+            <main id="des-container">
+            @if (isLoading) {
+                <div style="text-align: center; padding: 50px;">
+                    <p>Loading...</p>
+                </div>
+            }
+            @if (!isLoading) {
     
-        <main id="des-container">
+                    <h2 class="des-title">
+                        <strong class="des-num">01 </strong>Pick your Destination
+                    </h2>
     
-            <div class="des-left">
-
-                <h2 class="des-title">
-                    <strong class="des-num">01 </strong>Pick your Destination
-                </h2>
-
-                <div class="img-container">
-                    <img 
-                        src="/assets/destination/image-moon.png" 
-                        alt="moon" 
-                        class="des-img"
-                        >
+                    <div class="img-container">
+                        @if(selectedDestination) {
+                            <img 
+                                [src]="selectedDestination.images.png" 
+                                [alt]="selectedDestination.name" 
+                                class="des-img"
+                                >
+                        }
+    
+                    </div>
                 </div>
-            </div>
-
-            <div class="des-right">
-
-                <div class="select-group">
-
-                    <div class="select-btns">
-                        <button class="btn">
-                            moon
-                        </button>
-                    </div>
-
-                    <div class="select-btns">
-                        <button class="btn">
-                            mars
-                        </button>
-                    </div>
-
-                    <div class="select-btns">
-                        <button class="btn">
-                            europa
-                        </button>
-                    </div>
-
-                    <div class="select-btns">
-                        <button class="btn">
-                            titan
-                        </button>
-                    </div>
-
-                </div>
-
-                <div class="des-intro">
-
-                    <h1 class="des-name">Moon</h1>
-
-                    <p class="des-info">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima, commodi! Qui error aliquid alias culpa perspiciatis odit laudantium cupiditate! Necessitatibus quidem officia corrupti quo provident iure dolorum, incidunt nihil amet.
-                    Aliquid aut quam placeat dignissimos autem voluptatibus reprehenderit
-                    </p>
-
-                    <div class="line"></div>
-
-                    <div class="des-remain">
-
-                        <div class="distance">
-                            <p class="dis-text">avg. distance</p>
-                            <h2 class="dis-km">384.400 KM</h2>
+    
+                <div class="des-right">
+    
+                    <div class="select-group">
+    
+                        <div class="select-btns">
+                            <button
+                             (click)="selectDestinationData(destinationArray[0])"
+                             class="btn">
+                                moon
+                            </button>
                         </div>
-
-                        <div class="timer">
-                            <p class="timer-text">est. travel time</p>
-                            <h2 class="timer-left">3 days</h2>
+    
+                        <div class="select-btns">
+                            <button
+                             (click)="selectDestinationData(destinationArray[1])"
+                             class="btn">
+                                mars
+                            </button>
                         </div>
-
+    
+                        <div class="select-btns">
+                            <button
+                             (click)="selectDestinationData(destinationArray[2])"
+                             class="btn">
+                                europa
+                            </button>
+                        </div>
+    
+                        <div class="select-btns">
+                            <button
+                             (click)="selectDestinationData(destinationArray[3])"
+                             class="btn">
+                                titan
+                            </button>
+                        </div>
+    
                     </div>
-
+    
+                    <div class="des-intro">
+                        @if (selectedDestination) {
+                            <h1 class="des-name">
+                                {{ selectedDestination.name }}
+                            </h1>
+                        }
+    
+                        @if(selectedDestination) {
+                            <p class="des-info">
+                                {{ selectedDestination.description }}
+                            </p>
+                        }
+    
+                        <div class="line"></div>
+    
+                        <div class="des-remain">
+    
+                            <div class="distance">
+                                <p class="dis-text">avg. distance</p>
+                                @if(selectedDestination) {
+                                    <h2 class="dis-km">
+                                        {{ selectedDestination.distance }}
+                                    </h2>
+                                }
+                            </div>
+    
+                            <div class="timer">
+                                <p class="timer-text">est. travel time</p>
+                                @if(selectedDestination) {
+                                    <h2 class="timer-left">
+                                        {{ selectedDestination.travel }}
+                                    </h2>
+                                }
+                            </div>
+    
+                        </div>
+    
+                    </div>
+    
                 </div>
-
-            </div>
-
-        </main>
+            }
     
 </div>
