@@ -291,4 +291,20 @@ html, body {
     .des-left {
         width: 100%;
     }
+
+    .des-intro .des-remain {
+        width: 90%;
+        margin: 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .des-remain .distance {
+        margin-bottom: 20px;
+    }
+
+    .des-remain .timer {
+        margin-top: 20px;
+    }
 }
