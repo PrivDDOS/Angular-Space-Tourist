@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { JsonDataService } from '../../service/json-data';
-import { DesJson, DestinationModel } from '../../models/data-json';
+import { DesJson } from '../../models/data-json';
 
 @Component({
   selector: 'app-destination',
@@ -15,7 +14,8 @@ export class Destination implements OnInit {
 
     destinationData = inject(JsonDataService);
     destinationArray: DesJson[] = [];
-    selectedDestination: DesJson | undefined
+    selectedDestination: DesJson | undefined;
+    isLoading = true;
 
 
     ngOnInit(): void {
@@ -31,6 +31,9 @@ export class Destination implements OnInit {
         if(this.destinationArray.length > 0) {
           this.selectedDestination = this.destinationArray[0]
         }
+
+        this.isLoading = false;
+
       })
     }
 
