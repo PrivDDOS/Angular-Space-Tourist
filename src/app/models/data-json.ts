@@ -12,3 +12,18 @@ export interface DesJson {
 export interface DestinationModel {
     destinations: DesJson[];
 }
+
+
+export interface CrewJson {
+    name: string;
+    bio: string;
+    role: string;
+    images: {
+        png: string;
+        webp: string;
+    };
+}
+
+export interface CrewModel {
+    crew: CrewJson[]
+}

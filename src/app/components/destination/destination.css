@@ -142,6 +142,10 @@ html, body {
     cursor: pointer;
 }
 
+.btn:hover {
+    color: white;
+}
+
 .active {
     color: white
 }

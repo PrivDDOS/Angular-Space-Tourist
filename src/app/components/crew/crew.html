@@ -44,9 +44,33 @@
             </div>
         </header>
     
-        <main id="content-container">
-    
+        <main id="crew-container">
             
+            @if(!isLoading && selectedCrew) {
+
+                <div class="crew-left">
+
+                    <h2 class="crew-title">
+                        <strong class="des-num">02 </strong>Meet your Crew
+                    </h2>
+
+                    @if(selectedCrew) {
+                        <h4>{{ selectedCrew.role }}</h4>
+                        <h1>{{ selectedCrew.name }}</h1>
+                        <p>{{ selectedCrew.bio }}</p>
+                    }
+                </div>
+
+                <div class="crew-right">
+                    @if(selectedCrew) {
+                        <img
+                         [src]="selectedCrew.images.png"
+                         [alt]="selectedCrew.name"
+                         class="crew-img"
+                         >
+                    }
+                </div>
+            }
     
         </main>
     

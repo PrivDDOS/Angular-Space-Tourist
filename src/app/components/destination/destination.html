@@ -65,93 +65,76 @@
     
                     </div>
                 </div>
-    
-                <div class="des-right">
-    
-                    <div class="select-group">
-    
-                        <div class="select-btns">
-                            <button
-                             (click)="selectDestinationData(destinationArray[0])"
-                             class="btn">
-                                moon
-                            </button>
+                
+                @if(!isLoading && selectedDestination) {
+
+                    <div class="des-right">
+        
+                        <div class="select-group">
+        
+                            @for (destination of destinationArray; track destination.name) {
+                                <div class="select-btns">
+                                    <button
+                                        (click)="selectDestinationData(destination)"
+                                        [ngClass]="selectedDestination.name === destination.name ? 'active' : ''"
+                                        class="btn">
+                                        {{ destination.name }}
+                                    </button>
+                                </div>
+                            }
+        
                         </div>
-    
-                        <div class="select-btns">
-                            <button
-                             (click)="selectDestinationData(destinationArray[1])"
-                             class="btn">
-                                mars
-                            </button>
-                        </div>
-    
-                        <div class="select-btns">
-                            <button
-                             (click)="selectDestinationData(destinationArray[2])"
-                             class="btn">
-                                europa
-                            </button>
-                        </div>
-    
-                        <div class="select-btns">
-                            <button
-                             (click)="selectDestinationData(destinationArray[3])"
-                             class="btn">
-                                titan
-                            </button>
-                        </div>
-    
-                    </div>
-    
-                    <div class="des-intro">
-                        @if(isLoading) {
-                            <p>Loading data...</p>
-                        } @else if (selectedDestination) {
-                            <h1 class="des-name">
-                                {{ selectedDestination.name }}
-                            </h1>
-                        }
-    
-                        @if(isLoading) {
-                            <p>Loading data...</p>
-                        } @else if(selectedDestination) {
-                            <p class="des-info">
-                                {{ selectedDestination.description }}
-                            </p>
-                        }
-    
-                        <div class="line"></div>
-    
-                        <div class="des-remain">
-    
-                            <div class="distance">
-                                <p class="dis-text">avg. distance</p>
-                                @if(isLoading) {
-                                    <p>Loading data...</p>
-                                } @else if(selectedDestination) {
-                                    <h2 class="dis-km">
-                                        {{ selectedDestination.distance }}
-                                    </h2>
-                                }
+        
+                        <div class="des-intro">
+                            @if(isLoading) {
+                                <p>Loading data...</p>
+                            } @else if (selectedDestination) {
+                                <h1 class="des-name">
+                                    {{ selectedDestination.name }}
+                                </h1>
+                            }
+        
+                            @if(isLoading) {
+                                <p>Loading data...</p>
+                            } @else if(selectedDestination) {
+                                <p class="des-info">
+                                    {{ selectedDestination.description }}
+                                </p>
+                            }
+        
+                            <div class="line"></div>
+        
+                            <div class="des-remain">
+        
+                                <div class="distance">
+                                    <p class="dis-text">avg. distance</p>
+                                    @if(isLoading) {
+                                        <p>Loading data...</p>
+                                    } @else if(selectedDestination) {
+                                        <h2 class="dis-km">
+                                            {{ selectedDestination.distance }}
+                                        </h2>
+                                    }
+                                </div>
+        
+                                <div class="timer">
+                                    <p class="timer-text">est. travel time</p>
+                                    @if(isLoading) {
+                                        <p>Loading data...</p>
+                                    } @else if(selectedDestination) {
+                                        <h2 class="timer-left">
+                                            {{ selectedDestination.travel }}
+                                        </h2>
+                                    }
+                                </div>
+        
                             </div>
-    
-                            <div class="timer">
-                                <p class="timer-text">est. travel time</p>
-                                @if(isLoading) {
-                                    <p>Loading data...</p>
-                                } @else if(selectedDestination) {
-                                    <h2 class="timer-left">
-                                        {{ selectedDestination.travel }}
-                                    </h2>
-                                }
-                            </div>
-    
+        
                         </div>
-    
+        
                     </div>
-    
-                </div>
+
+                }
     
             </main>
 
