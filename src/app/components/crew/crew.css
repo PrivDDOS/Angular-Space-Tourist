@@ -86,3 +86,78 @@ html, body {
     color: white;
     margin-top: 20px;
 }
+
+.crew-left {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+}
+
+.crew-title {
+    margin-left: 30px;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+.crew-title strong {
+    color: rgb(98, 102, 106);
+}
+
+.crew-left h4 {
+    font-size: 32px;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: rgb(98, 102, 106);
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.crew-left h1 {
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 60px;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 40px;
+}
+
+.dots-container {
+    display: flex;
+    gap: 25px;
+    height: 100%;
+    align-items: flex-end;
+    margin-bottom: 80px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: white;
+}
+
+.crew-left p {
+    font-size: 18px;
+}
+
+.crew-right {
+    width: 50%;
+    height: 100vh;
+    margin-left: 40px;
+    padding-top: 40px;
+}
+
+.crew-img {
+    width: 500px;
+    height: 650px;
+}

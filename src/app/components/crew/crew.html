@@ -46,12 +46,13 @@
     
         <main id="crew-container">
             
+            
             @if(!isLoading && selectedCrew) {
 
                 <div class="crew-left">
 
                     <h2 class="crew-title">
-                        <strong class="des-num">02 </strong>Meet your Crew
+                        <strong>02 </strong>Meet your Crew
                     </h2>
 
                     @if(selectedCrew) {
@@ -59,6 +60,17 @@
                         <h1>{{ selectedCrew.name }}</h1>
                         <p>{{ selectedCrew.bio }}</p>
                     }
+
+                    <div class="dots-container">
+                    @for (crew of crewArray; track $index) {
+                            <span
+                            (click)="dotsSelect(crew)"
+                            [ngClass]="{active: selectedCrew === crew}" 
+                            class="dot">
+                            </span>
+                        }
+                    </div>
+
                 </div>
 
                 <div class="crew-right">
