@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ChangeDetectorRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { JsonDataService } from '../../service/json-data';
 import { DesJson } from '../../models/data-json';
@@ -11,6 +11,8 @@ import { DesJson } from '../../models/data-json';
   styleUrl: './destination.css',
 })
 export class Destination implements OnInit {
+
+  constructor(private cdr: ChangeDetectorRef) {}
 
     destinationData = inject(JsonDataService);
     destinationArray: DesJson[] = [];
@@ -33,6 +35,7 @@ export class Destination implements OnInit {
         }
 
         this.isLoading = false;
+        this.cdr.detectChanges()
 
       })
     }
