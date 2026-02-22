@@ -148,6 +148,7 @@ html, body {
 
 .crew-left p {
     font-size: 18px;
+    width: 85%;
 }
 
 .crew-right {
@@ -160,4 +161,104 @@ html, body {
 .crew-img {
     width: 500px;
     height: 650px;
+}
+
+/* TABLET */
+@media only screen and (max-width: 1080px) {
+    
+    #container {
+        background-image: url("/assets/crew/background-crew-tablet.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #crew-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .crew-left {
+        width: 80%;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .crew-title {
+        margin: 0;
+    }
+
+    .crew-left p {
+        text-align: center;
+    }
+
+    .dots-container {
+        align-items: center;
+    }
+
+    .crew-right {
+        padding: 0;
+    }
+
+}
+
+/* MOBILE */
+@media only screen and (max-width: 768px) {
+
+    #container {
+        background-image: url("/assets/crew/background-crew-mobile.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .mobile-menu {
+        display: block;
+        position: relative;
+        margin-left: auto;
+        padding-right: 24px;
+        cursor: pointer;
+        z-index: 1002;
+    }
+
+    .nav-right {
+        position: fixed;
+        inset: 0 0 0 auto;
+        top: -70%;
+        right: -100%;
+        width: 80%;
+        min-height: 100vh;
+        background: rgba(15, 15, 30, 0.95);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 120px;
+        padding-right: 30px;
+        transition: right 0.4s ease;
+        z-index: 1000;
+    }
+
+    .nav-right.active {
+        right: -10%;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .crew-left h1 {
+        font-size: 45px;
+    }
+
+    .crew-right {
+        width: auto;
+        margin: 0;
+    }
+
+    .crew-img {
+        width: auto;
+        height: auto;
+    }
+
 }
