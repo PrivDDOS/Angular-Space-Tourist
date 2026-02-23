@@ -95,10 +95,12 @@ html, body {
 }
 
 .des-title {
+    margin-top: 40px;
+    margin-left: 120px;
+    margin-bottom: 80px;
     text-transform: uppercase;
-    font-size: 26px;
     font-weight: 100;
-    padding-right: 60px;
+    font-size: 28px;
 }
 
 .des-title strong {
