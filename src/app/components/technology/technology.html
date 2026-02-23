@@ -44,9 +44,66 @@
             </div>
         </header>
     
-        <main id="content-container">
-    
+        <main id="tech-container">
             
+            @if(!isLoading && selectedTech) {
+
+                <div class="tech-left">
+    
+                    <h2 class="tech-title">
+                        <strong>03 </strong>Space launch 101
+                    </h2>
+
+                    @if(selectedTech) {
+
+                        <div class="tech-content">
+
+                            <div class="ul-container">
+                                <ul class="number">
+                                    @for (tech of techArray; track $index) {
+                                        <li
+                                        (click)="ulSelect(tech)"
+                                        [ngClass]="{active: selectedTech === tech}"
+                                        class="tech-select"
+                                        >
+                                        {{ $index + 1 }}
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+
+                            <div class="tech-info">
+                                <h4>The Terminology...</h4>
+                                <h1>{{ selectedTech.name }}</h1>
+                                <p>{{ selectedTech.description }}</p>
+                            </div>
+
+                        </div>
+
+                    }
+
+                </div>
+
+                <div class="tech-right">
+                    @if(selectedTech) {
+
+                        <!-- Desktop and mobile Image -->
+                        <img 
+                        class="img-tech portrait"
+                        [src]="selectedTech.images.portrait" 
+                        [alt]="selectedTech.name"
+                        >
+
+                        <!-- Tablet Image -->
+                        <img 
+                        class="img-tech landscape"
+                        [src]="selectedTech.images.landscape" 
+                        [alt]="selectedTech.name"
+                        >
+                    }
+                </div>
+
+            }
     
         </main>
     

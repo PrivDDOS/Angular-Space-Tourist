@@ -1,3 +1,4 @@
+/* Models for DESTINATION component */
 export interface DesJson {
     name: string;
     description: string;
@@ -13,6 +14,7 @@ export interface DestinationModel {
     destinations: DesJson[];
 }
 
+/* Models for CREW component */
 
 export interface CrewJson {
     name: string;
@@ -26,4 +28,19 @@ export interface CrewJson {
 
 export interface CrewModel {
     crew: CrewJson[]
+}
+
+/* Models for TECHNOLOGY component */
+
+export interface TechJson {
+    name: string;
+    description: string;
+    images: {
+        portrait: string;
+        landscape: string
+    }
+}
+
+export interface TechModel {
+    technology: TechJson[]
 }
