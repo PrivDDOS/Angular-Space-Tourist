@@ -17,7 +17,8 @@ export class Technology implements OnInit {
   techData = inject(JsonDataService)
   techArray: TechJson[] = [];
   selectedTech: TechJson | undefined;
-  isLoading = true
+  isLoading = true;
+  mobileMenu = false;
 
   ngOnInit(): void {
     this.getTechData()
@@ -40,6 +41,10 @@ export class Technology implements OnInit {
 
   ulSelect(tech: TechJson) {
     this.selectedTech = tech
+  }
+
+  toggleMobileMenu(): void {
+    this.mobileMenu = !this.mobileMenu
   }
 
 }

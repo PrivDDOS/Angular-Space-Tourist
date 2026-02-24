@@ -7,11 +7,18 @@
                     <img src="/assets/shared/logo.svg" alt="logo">
                 </nav>
 
-                <div class="mobile-menu">
+                <div 
+                class="mobile-menu"
+                (click)="toggleMobileMenu()"
+                [ngClass]="{ active: mobileMenu}"
+                >
                     <img id="mobile-icon" src="/assets/shared/icon-hamburger.svg" alt="mobile-icon">
                 </div>
     
-                <nav class="nav-right unactive">
+                <nav 
+                class="nav-right"
+                [ngClass]="mobileMenu ? 'active' : '' "
+                >
     
                     <button 
                     routerLink="/"
@@ -43,6 +50,10 @@
                 </nav>
             </div>
         </header>
+
+        <h2 class="tech-title">
+            <strong>03 </strong>Space launch 101
+        </h2>
     
         <main id="tech-container">
             
@@ -50,9 +61,6 @@
 
                 <div class="tech-left">
     
-                    <h2 class="tech-title">
-                        <strong>03 </strong>Space launch 101
-                    </h2>
 
                     @if(selectedTech) {
 

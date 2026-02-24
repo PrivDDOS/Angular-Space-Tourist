@@ -18,6 +18,7 @@ export class Crew implements OnInit {
   crewArray: CrewJson[] = [];
   selectedCrew: CrewJson | undefined;
   isLoading = true;
+  mobileMenu = false;
 
   // Crew Image
   currentPng = 0;
@@ -45,6 +46,10 @@ export class Crew implements OnInit {
 
   dotsSelect(crew: CrewJson) {
     this.selectedCrew = crew
+  }
+
+  toggleMobileMenu(): void {
+    this.mobileMenu = !this.mobileMenu
   }
 
 

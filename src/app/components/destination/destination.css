@@ -71,7 +71,7 @@ html, body {
 
 .nav-right .btn:hover::after {
     width: 100%;
-}
+} */
 
 .nav-right .btn-text {
     font-size: 14px;
@@ -96,7 +96,7 @@ html, body {
 
 .des-title {
     margin-top: 40px;
-    margin-left: 120px;
+    margin-left: 30px;
     margin-bottom: 80px;
     text-transform: uppercase;
     font-weight: 100;

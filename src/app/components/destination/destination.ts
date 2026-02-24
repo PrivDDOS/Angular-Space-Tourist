@@ -18,6 +18,7 @@ export class Destination implements OnInit {
     destinationArray: DesJson[] = [];
     selectedDestination: DesJson | undefined;
     isLoading = true;
+    mobileMenu = false;
 
 
     ngOnInit(): void {
@@ -44,6 +45,8 @@ export class Destination implements OnInit {
       this.selectedDestination = destination;
     }
 
-    
+    toggleMobileMenu(): void {
+    this.mobileMenu = !this.mobileMenu
+    }
 
 }

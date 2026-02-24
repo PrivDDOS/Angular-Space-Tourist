@@ -78,20 +78,9 @@ html, body {
     font-size: 14px;
 }
 
-#tech-container {
-    display: flex;
-    flex-direction: row;
-    margin-left: 120px;
-}
-
-.tech-left {
-    display: flex;
-    flex-direction: column;
-}
-
 .tech-title {
-    margin-top: 40px;
-    margin-left: 80px;
+    margin-top: 60px;
+    margin-left: 180px;
     margin-bottom: 80px;
     text-transform: uppercase;
     font-weight: 100;
@@ -101,6 +90,17 @@ html, body {
 
 .tech-title strong {
     color: rgb(98, 102, 106);
+}
+
+#tech-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 120px;
+}
+
+.tech-left {
+    display: flex;
+    flex-direction: column;
 }
 
 .tech-content {
@@ -184,6 +184,52 @@ html, body {
 
 /* TABLET */
 @media only screen and (max-width: 1080px) {
+    
+    #container {
+        background-image: url("/assets/technology/background-technology-tablet.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .tech-title {
+        display: flex;
+        justify-content: center;
+        margin: 60px 0 0 0;
+    }
+
+    #tech-container {
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 0;
+    }
+
+    .tech-left .tech-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+    }
+
+    .ul-container .number {
+        list-style: none;
+        display: flex;
+        gap: 14px;
+        margin-top: 20px;
+    }
+
+    .tech-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tech-info p {
+        display: flex;
+        text-align: center;
+        width: 55%;
+    }
 
     .portrait {
         display: none;
@@ -191,17 +237,61 @@ html, body {
 
     .landscape {
         display: block;
+        width: 100%;
     }
 }
 
 /* MOBILE */
 @media only screen and (max-width: 768px) {
 
+    #container {
+        background-image: url("/assets/technology/background-technology-mobile.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .mobile-menu {
+        display: block;
+        position: relative;
+        margin-left: auto;
+        padding-right: 24px;
+        cursor: pointer;
+        z-index: 1002;
+    }
+
+    .nav-right {
+        position: fixed;
+        inset: 0 0 0 auto;
+        top: -70%;
+        right: -100%;
+        width: 80%;
+        min-height: 100vh;
+        background: rgba(15, 15, 30, 0.95);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 120px;
+        padding-right: 30px;
+        transition: right 0.4s ease;
+        z-index: 1000;
+    }
+
+    .nav-right.active {
+        right: -10%;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .tech-right {
+        display: flex;
+        justify-content: center;
+    }
 
     .portrait {
         display: block;
-        width: 500px;
-        height: 480px;
+        width: 100%;
     }
 
     .landscape {
