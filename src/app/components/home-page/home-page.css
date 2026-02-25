@@ -223,5 +223,33 @@ html, body {
         display: flex;
         align-items: flex-end;
     }
+
+    .nav-right .btn::after {
+        all: unset; /* wipes desktop underline rule */
+    }
+
+    .nav-right .btn {
+        position: relative;
+        width: 90%;
+    }
+
+    .nav-right .btn::before {
+        content: "";
+        position: absolute;
+        right: -20px;
+        width: 3px;
+        height: 24px;
+        background: white;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    .nav-right .btn:hover:before {
+        opacity: 1;
+    }
+
+    .content-left h3 {
+        transform: none;
+    }
     
 }
