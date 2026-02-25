@@ -3,6 +3,7 @@ import { Component, inject, OnInit, ChangeDetectorRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { JsonDataService } from '../../service/json-data';
 import { CrewJson } from '../../models/data-json';
+import { get } from 'node:http';
 
 @Component({
   selector: 'app-crew',
@@ -46,6 +47,14 @@ export class Crew implements OnInit {
 
   dotsSelect(crew: CrewJson) {
     this.selectedCrew = crew
+
+    const dotOnclick = this.crewArray.indexOf(crew)
+    if(dotOnclick !== -1) {
+      this.currentPng = dotOnclick
+    }
+    
+    clearInterval(this.pngSlide)
+    this.slider()
   }
 
   toggleMobileMenu(): void {
